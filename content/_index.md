@@ -14,6 +14,7 @@ Si tienes curiosidad de como he montado esto te lo puedo explicar en esta nota [
 
 
 - [[202009041424]] Intereses
+- [[20200904171206]] Mis prioridades
 - [[20200904161053]] Proyectos
 
 
