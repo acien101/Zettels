@@ -13,6 +13,36 @@
 @import "utilities/normalize";
 @import "utilities/reset";
 
+%table-cell {
+    border: 1px solid #cccccc;
+    padding: 6px 12px;
+    text-align: left;
+}
+
+table {
+  margin: $margin-y auto;
+  width: 100%;
+  & tr {
+    background-color: white;
+    border: 1px solid #cccccc;
+    & td {
+      @extend %table-cell;
+    }
+    & th {
+      @extend %table-cell;
+      font-weight: bold;
+    }
+    &:nth-child(2n) {
+      background-color: #f8f8f8;
+    }
+  }
+}
+
+.note-wrapper {
+    max-width: 55rem !important;
+}
+
+
 .font-mono {
     font-family: Menlo,Monaco,Consolas,liberation mono,courier new,monospace;
 }
