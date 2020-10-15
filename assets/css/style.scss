@@ -239,6 +239,7 @@ ul li:before {
 
 code, pre {
 	font-family: Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  font-size: $text-sm !important;
 }
 pre {
 	-moz-tab-size:    4; /* Firefox 4+ */
