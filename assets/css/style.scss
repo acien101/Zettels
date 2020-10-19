@@ -239,6 +239,7 @@ ul li:before {
 
 code, pre {
 	font-family: Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  font-size: $text-sm !important;
 }
 pre {
 	-moz-tab-size:    4; /* Firefox 4+ */
@@ -259,7 +260,7 @@ h1 code, h2 code, h3 code, h4 code, h5 code, h6 code, li code, p code {
 	border-radius: 0.25rem;
 	font-family: monospace;
 	color: $inline-code-color;
-	font-size: 0.86rem;
+	font-size: $text-base !important;
 	padding: 2px 0.25rem;
 }
 
