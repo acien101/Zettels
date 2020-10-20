@@ -1,81 +1,103 @@
-![Build Status](https://gitlab.com/pages/hugo/badges/master/build.svg)
+# Acien101's Zettels - My note taking tool
 
+Original work by [Crisrojas](https://github.com/crisrojas) from [Zettels](https://github.com/crisrojas/zettels). This work differs from the original mostly on style. Checkout [gumroad](https://gumroad.com/l/zettelkasten) for supporting the original author.
+
+Online Zettelkästen built with [Hugo](https://gohugo.io/). Useful tool for taking notes and linking knowledge. This repository is not a theme, its a blog that use [Zettels](https://github.com/crisrojas/zettels). Use it like an example or a guideline for creating your zettel.
+
+If you want to host this theme free consider using [GitLab pages](https://docs.gitlab.com/ee/user/project/pages/). Take a look to my Zettelkästen hosted [here](https://acien101.gitlab.io/).
+
+## Installing
+
+### Clone repository
+
+**Be careful to recursively clone the repository**.
+
+```
+$ git clone --recursive https://github.com/acien101/Zettels.git
+```
+
+### Installing hugo
+
+See [hugo documentation](https://gohugo.io/getting-started/installing) to get started. Install the extender version that supports sass.
+
+### Start the server
+
+```
+hugo server -D
+```
+
+## Linking notes
+
+This theme includes [[wikilinks]] support.
+
+If you want to link a note, just put it's file name inside two brackets.
+
+That means that for the note:
+
+```
+biology.md
+```
+
+You would link it like this
+
+```
+[[biology]]
+```
+
+Output:
+
+```html
+<a href="biology.html">biology</a>
+```
+
+Make sure your filenames contain not spaces as this isn't supported by the regex yet.
+
+**DO**
+
+```
+biologia-celular.md ✅
+[[biologia-celular]] ✅
+```
+
+**DON'T**
+
+```
+biología celular.md ⛔️
+[[biología celular]] ⛔️
+```
+
+**Your markdown notes go inside the `content` folder and need to comply with a valid yaml syntax if you're using metadata**
+
+## Backlinks
+
+Backlinks are supported right out the box. To use them properly you would want to give a title to each of your notes in the yaml header,  like so:
+
+```
+---
+title: My awesome note
 ---
 
-Example [Hugo] website using GitLab Pages.
+Hi! This is the content of my awesome note.
+```
 
-Learn more about GitLab Pages at https://pages.gitlab.io and the official
-documentation https://docs.gitlab.com/ce/user/project/pages/.
+This way the note can be referenced in the backlinks section since the backlink function will look for the `title` key.
 
----
+## MathJax
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+You can write math equations using **latex syntax**.
 
-- [GitLab CI](#gitlab-ci)
-- [Building locally](#building-locally)
-- [GitLab User or Group Pages](#gitlab-user-or-group-pages)
-- [Did you fork this project?](#did-you-fork-this-project)
-- [Troubleshooting](#troubleshooting)
+```
+<div>
+$$
+\sqrt{\frac{\lambda}{\ro}}
+$$
+</div>
+```
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+## Screenshots
 
-## GitLab CI
+![](./pics/3.png)
 
-This project's static Pages are built by [GitLab CI][ci], following the steps
-defined in [`.gitlab-ci.yml`](.gitlab-ci.yml).
+![](./pics/2.png)
 
-## Building locally
-
-To work locally with this project, you'll have to follow the steps below:
-
-1. Fork, clone or download this project
-1. [Install][] Hugo
-1. Preview your project: `hugo server`
-1. Add content
-1. Generate the website: `hugo` (optional)
-
-Read more at Hugo's [documentation][].
-
-### Preview your site
-
-If you clone or download this project to your local computer and run `hugo server`,
-your site can be accessed under `localhost:1313/hugo/`.
-
-The theme used is adapted from http://themes.gohugo.io/beautifulhugo/.
-
-## GitLab User or Group Pages
-
-To use this project as your user/group website, you will need one additional
-step: just rename your project to `namespace.gitlab.io`, where `namespace` is
-your `username` or `groupname`. This can be done by navigating to your
-project's **Settings**.
-
-You'll need to configure your site too: change this line
-in your `config.toml`, from `"https://pages.gitlab.io/hugo/"` to `baseurl = "https://namespace.gitlab.io"`.
-Proceed equally if you are using a [custom domain][post]: `baseurl = "http(s)://example.com"`.
-
-Read more about [user/group Pages][userpages] and [project Pages][projpages].
-
-## Did you fork this project?
-
-If you forked this project for your own use, please go to your project's
-**Settings** and remove the forking relationship, which won't be necessary
-unless you want to contribute back to the upstream project.
-
-## Troubleshooting
-
-1. CSS is missing! That means two things:
-
-    Either that you have wrongly set up the CSS URL in your templates, or
-    your static generator has a configuration option that needs to be explicitly
-    set in order to serve static assets under a relative URL.
-
-[ci]: https://about.gitlab.com/gitlab-ci/
-[hugo]: https://gohugo.io
-[install]: https://gohugo.io/overview/installing/
-[documentation]: https://gohugo.io/overview/introduction/
-[userpages]: http://doc.gitlab.com/ee/pages/README.html#user-or-group-pages
-[projpages]: http://doc.gitlab.com/ee/pages/README.html#project-pages
-[post]: https://about.gitlab.com/2016/04/07/gitlab-pages-setup/#custom-domains
+![](./pics/1.png)
